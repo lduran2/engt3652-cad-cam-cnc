@@ -4,3 +4,10 @@
 # Who has files
 *.dwl
 *.dwl2
+
+# temporary files
+~$*
+
+# compressed dimensioning and other spreadsheets
+*.xlsx
+*.zip
