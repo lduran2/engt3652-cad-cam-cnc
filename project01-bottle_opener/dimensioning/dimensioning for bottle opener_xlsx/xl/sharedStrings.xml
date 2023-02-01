@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<sst xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" count="7" uniqueCount="5"><si><t>Bounds</t></si><si><t>width</t></si><si><t>center</t></si><si><t>radius</t></si><si><t>height</t></si></sst>
+<sst xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" count="10" uniqueCount="7"><si><t>width</t></si><si><t>center</t></si><si><t>radius</t></si><si><t>height</t></si><si><t>x</t></si><si><t>y</t></si><si><t>diameter</t></si></sst>
