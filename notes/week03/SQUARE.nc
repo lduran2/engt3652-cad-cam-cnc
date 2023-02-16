@@ -1,5 +1,5 @@
 %
-O12345 (steps)
+O12345 (SQUARE)
 G90 G54 G20 G80 G49
 M06 T1 (call tool #1)
 M03 S1000 (turn spindle @1000RPM)
