@@ -31,7 +31,30 @@ M05 (turn off spindle)
 (******TAPPING******)
 
 (******INSIDE CIRCULAR CUT******)
-G01 Z-.080 F14. (plunge into work piece)
+G90 G54 G20 G80 G49
+M06 T3 (1/4" end mill)
+M03 S7000 (turn spindle @7000RPM)
+M08 (turn coolent on)
+G43 H3 (tool length info)
+G00 X1.473 Y-1.473 (rapid move to P1)
+G00 Z.500 (buffer zone above Z0)
+G00 Z.100
+G00 X-.080 F14. (plunge into work piece .080)
+G01 G42 D3 X1.473 Y-.8430 F28. (COMP ON-P2)
+G02 X1.473 Y-2.103 R.630 (P3)
+G02 Y-.8430 R.630 (P2)
+G01 Z-.160 F14. (plunge into work piece Z-.160)
+G02 Y-2.103 R.630 (P3)
+G02 Y-.8430 R.630 (P2)
+G01 Z-.240 F14. (plunge into work piece Z-.240)
+G02 Y-2.103 R.630 (P3)
+G02 Y-.8430 R.630 (P2)
+G01 G40 Y-1.473 (comp off-p1)
+G00 Z.5
+G28 G91 Z0 (cancels G54 and go to machine Z0)
+G28 G91 X0 Y0 (go to machine X0, Y0)
+M09 (turn off coolent)
+M05 (turn off spindle)
 
 (***CONTOUR CUT***)
 G90 G54 G20 G80 G49
