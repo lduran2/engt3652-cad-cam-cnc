@@ -62,6 +62,32 @@ M06 T3 (1/4" end mill)
 M03 S7000
 M08 (turn coolent on)
 G43 H3 (tool length info)
+G00 X1.473 Y-1.473 (rapid move to P1)
+G00 Z.500 (buffer zone above Z0)
+G00 Z.100
+G01 Z-.080 F14. (pluge into work piece Z-.080)
+G01 G41 D3 X-.250 Y0 F28. (COMP ON-P2)
+
+(******SECOND PASS******)
+G01 X3.635 Y0 (P3)
+G02 R.365 X4. Y-.365(P4)
+G01 Y-2.582 (P5)
+G02 R.365 X3.635 Y-2.947 (P6)
+G01 X.9012 (P7)
+G01 X0 Y-2.316 (P8)
+G01 X0 Y0 (origin)
+G01 Z-.160 F14. (pluge into work piece Z-.160)
+
+(******THIRD PASS******)
+G01 X3.635 Y0 (P3)
+G02 R.365 X4. Y-.365(P4)
+G01 Y-2.582 (P5)
+G02 R.365 X3.635 Y-2.947 (P6)
+G01 X.9012 (P7)
+G01 X0 Y-2.316 (P8)
+G01 X0 Y0 (origin)
+G01 Z-.240 F14. (plunge into work piece Z-.240)
+
 
 G00 X-.500 Y0 (rapid move to P1)
 G00 Z.500 (buffer zone above Z0)
