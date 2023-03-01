@@ -9,18 +9,13 @@ G43 H1 (tool length info)
 (***DRILLING***)
 G90 G54 G20 G80 G49
 M06 T1 (#7 drill bit)
-M03 S3200 (turn spindle @3200 RPM = 4CS/d = 4{200}/{1/4}: CS {cutting speed [ft/min]}: Speeds & Feeds-G81&G83&G84-Climb VS conventional-Subprograms, p.13)
-(ipm = {feeds/rev [in]}{# teeth}RPM = {.004}{2}{3200} = 25 => 10: Speeds & Feeds-G81&G83&G84-Climb VS conventional-Subprograms, p.5)
+M03 S3200 (turn spindle @3200 RPM = 4CS/d = 4{200}/{1/4})
+(CS {cutting speed [ft/min]}: Speeds & Feeds-G81&G83&G84-Climb VS conventional-Subprograms, p.13)
+(ipm = {feeds/rev [in]}{# teeth}RPM = {.004}{2}{3200} = 25 => 10)
+(Speeds & Feeds-G81&G83&G84-Climb VS conventional-Subprograms, p.5)
 M08 (turn coolent on)
 G43 H1 (tool length info)
-
 G00 X.973 Y-.607 (rapid move to P1)
-G00 Z.500 (buffer zone above Z0)
-G00 Z.100
-G81 G99 Z-.350 R.100 F10.
-
-F14. (plunge into work piece)
-
 G00 Z.500 (buffer zone above Z0)
 G00 Z.100
 G81 G99 Z-.350 R.100 F10.
@@ -35,6 +30,8 @@ M09 (turn off coolent)
 M05 (turn off spindle)
 (******TAPPING******)
 
+(******INSIDE CIRCULAR CUT******)
+G01 Z-.080 F14. (plunge into work piece)
 
 (***CONTOUR CUT***)
 G90 G54 G20 G80 G49
