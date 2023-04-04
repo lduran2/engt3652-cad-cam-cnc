@@ -7,17 +7,25 @@
 \author{Leomar Dur\'an}
 \date{$3^{\text{rd}}$ April 2023}
 
+\usepackage{pdflscape}
 \usepackage{graphicx}
+\usepackage{minted}
+\newcommand*\gcode{lib/pygments/gcodelexer.py:GcodeLexer -x}
 
 \begin{document}
 
 \maketitle
 
 \chapter{Verification of operations in Mastercam}
-
-
+\begin{landscape}
+\vfill\null
+\includegraphics[width=\linewidth]{img/prj04-mastercam_simulator-verification.png}
+\vfill\null
+\end{landscape}
 
 \chapter{Gcode}
+
+\inputminted\gcode{src/Bottle_opener_top.NC}
 
 \chapter{Plot in NCViewer}
 
