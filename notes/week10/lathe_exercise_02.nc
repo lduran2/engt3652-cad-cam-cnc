@@ -10,8 +10,8 @@ G01 X.500 Z0 F.014 (P)
 G01 Z-.250 (P1)
 G01 X1. Z-1.(P2 - .250 + .750)
 G00 X1.2 (Q)
+M09 (coolant off)
 G53 X0 (machine ZERO for x)
 G52 Z0 (machine ZERO for z)
-M09 (coolant off)
 M30
 %
