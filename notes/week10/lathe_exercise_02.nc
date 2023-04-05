@@ -1,9 +1,10 @@
 %
-O94432(SECOND EXERCISE FOR LATHE)
-G90 G80 G54 (G20 is a default)
-T0101 (tool, offset 01 = xz)
-G50 S4000 (max spindle speed - RPM = 4*CS/D = 4*250/1" = 1000 rpm)
-M03 S1000 G96
+O79008(THIRD EXERCISE FOR LATHE)
+G90 G54 G96
+T0101 (tool call #1, " setting #1)
+M03 S1000 (RPM = 4*CS/D = 4*250/1" = 1000 rpm)
+G50 S4000 (limit speed for RPM)
+G80 (G20 is a default)
 M08 (coolant ON)
 GOO X1.200 Z0 (S)
 G01 X.500 Z0 F.014 (P)
