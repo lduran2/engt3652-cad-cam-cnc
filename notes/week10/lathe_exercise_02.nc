@@ -6,7 +6,10 @@ M03 S1000 (RPM = 4*CS/D = 4*250/1" = 1000 rpm)
 G50 S5000 (limit speed for RPM)
 G00 X1.1 Z.100 (S)
 
-
+G00 X0 (still off the piece - to P)
+G01 Z0 (P1)
+G03 X.500 Z-.250 R.250 (CCW - P2)
+G01 X Z (P3)
 
 G80 (G20 is a default)
 M08 (coolant ON)
