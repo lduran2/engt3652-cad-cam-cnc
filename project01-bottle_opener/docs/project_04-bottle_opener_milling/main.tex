@@ -2,6 +2,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{subfiles}
 
 \title{ENGT 3652 Project 4:\\*Bottle opener-Milling}
 \author{Leomar Dur\'an}
@@ -9,6 +10,7 @@
 
 \usepackage{pdflscape}
 \usepackage{graphicx}
+\usepackage[final]{pdfpages}
 \usepackage{minted}
 \newcommand*\gcode{lib/pygments/gcodelexer.py:GcodeLexer -x}
 
@@ -23,8 +25,8 @@
 \vfill\null
 \end{landscape}
 
-\chapter{Gcode}
-\inputminted\gcode{src/Bottle_opener_top.NC}
+%\chapter{Gcode}
+\includepdf[pages=2-,pagecommand={}]{pdf/gcode.pdf}
 
 \chapter{Plot in NCViewer}
 \begin{landscape}
