@@ -1,3 +1,5 @@
 %
 O09024(FIRST EXERCISE FOR LATHE)
 G90 G54 G20 G80
+G50 S4000 (max spindle speed)
+(RPM = 4*CS/D = 4*250/1" = 1000 rpm)
