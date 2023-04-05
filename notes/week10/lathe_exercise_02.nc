@@ -3,7 +3,11 @@ O79008(THIRD EXERCISE FOR LATHE)
 G90 G54 G96
 T0101 (tool call #1, " setting #1)
 M03 S1000 (RPM = 4*CS/D = 4*250/1" = 1000 rpm)
-G50 S4000 (limit speed for RPM)
+G50 S5000 (limit speed for RPM)
+G00 X1.1 Z.100 (S)
+
+
+
 G80 (G20 is a default)
 M08 (coolant ON)
 GOO X1.200 Z0 (S)
