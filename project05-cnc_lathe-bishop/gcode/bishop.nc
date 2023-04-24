@@ -19,7 +19,7 @@ G43 H1 (tool length info)
 
 N10 G00 Z.100 X.0 (rapid move to P)
 G01 Z.0 F.010 (P1)
-G01 X.119 (P2)
+G01 X.238 (P2)
 G03 Z.078 X.197 (P3)
 
 
