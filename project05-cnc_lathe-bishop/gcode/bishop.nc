@@ -6,12 +6,11 @@ M03 (turn spindle)
 S1200 (RPM = [4 CS cutting speed]/[diameter] = [4 x 300]/[1 in] = 1200)
 G96
 G50 S4000 (upper limit)
-
 G00 Z.100 X1. (S) (!!!X is diameter!!!)
 G71 P10 (line number)
 Q1 D.035 (depth of cut)
-U.010 (roughing pass, extra on X) (finishing)
-W.005 (for next tool to cut on Z) (finishing)
+U.010 (finishing: roughing pass, extra on X)
+W.005 (finishing: for next tool to cut on Z)
 F.010 (feed, in/rev)
 
 
@@ -38,6 +37,13 @@ G01 Z-1.673 X.788 (P13)
 G01 Z-1.772 (P14)
 N20 G00 Z-1.772 X.988 (Q, X = .788 + 2*.100 buffer)
 
+T0202 (finish turn)
+G54 
+M03 (turn spindle)
+S1200 (RPM = [4 CS cutting speed]/[diameter] = [4 x 300]/[1 in] = 1200)
+G96
+G50 S4000 (upper limit)
+G00 Z.100 X1. (S) (!!!X is diameter!!!)
 
 G00 Z.5
 G28 G91 Z0 (cancels G54 and go to machine Z0) 
