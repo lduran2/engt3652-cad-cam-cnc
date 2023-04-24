@@ -38,6 +38,7 @@ M03 (turn spindle)
 S1200 (RPM = [4 CS cutting speed]/[diameter] = [4 x 300]/[1 in] = 1200)
 G96
 G50 S4000 (upper limit)
+M08 (turn coolent on)
 G00 Z.100 X1. (S) (!!!X is diameter!!!)
 G70 P10 Q2
 G00 X1.
@@ -49,6 +50,7 @@ M03 (turn spindle)
 S1200 (RPM = [4 CS cutting speed]/[diameter] = [4 x 300]/[1 in] = 1200)
 G96
 G50 S4000 (upper limit)
+M08 (turn coolent on)
 G00 Z-1.772 X1.3 (S) (!!!X is diameter!!!)
 G01 X.200 F.002 (parts catcher: go slow - small feed)
 M36 (call parts catcher ON)
