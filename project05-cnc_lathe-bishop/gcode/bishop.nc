@@ -13,12 +13,6 @@ Q1 D.035 (depth of cut)
 U.010 (finishing: roughing pass, extra on X)
 W.005 (finishing: for next tool to cut on Z)
 F.010 (feed [in/rev])
-
-
-G90 G20 G80 G49
-M06 T1 (call tool #1)
-G43 H1 (tool length info)
-
 N10 (* Define the profile of the bishop *)
 G00 Z.100 X.0 (rapid move to P) (!!!X is diameter!!!)
 G01 Z.0 F.010 (P1)
