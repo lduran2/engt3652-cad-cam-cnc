@@ -1,8 +1,14 @@
 %
-O59776 (contourMillingPartA)
-G90 G54 G20 G80 G49
+O52224 (Duran-bishop)
+T0303 (call & set up tool #3)
+G54 
+M03 S1200 G96 (turn spindle, RPM = [4 CS cutting speed]/[diameter] = [4 x 300]/[1 in] = 1200)
+G50 S4000 (upper limit)
+
+
+
+G90 G20 G80 G49
 M06 T1 (call tool #1)
-M03 S1000 (turn spindle @1000RPM)
 M08 (turn coolent on)
 G43 H1 (tool length info)
 G00 X-.1250 Y.1250 (rapid move to P1)
