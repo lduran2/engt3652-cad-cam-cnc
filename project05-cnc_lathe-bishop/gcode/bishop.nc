@@ -10,7 +10,8 @@ G50 S4000 (upper limit)
 G00 Z.100 X1. (S) (!!!X is diameter!!!)
 G71 P10 (line number)
 Q1 D.035 (depth of cut)
-U0 W0 (finishing)
+U.010 (roughing pass, extra on X) (finishing)
+W.005 (for next tool to cut on Z) (finishing)
 F.010 (feed, in/rev)
 
 
