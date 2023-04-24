@@ -6,7 +6,7 @@ M03 (turn spindle)
 S1200 (RPM = [4 CS cutting speed]/[diameter] = [4 x 300]/[1 in] = 1200)
 G96
 G50 S4000 (upper limit)
-G00 Z.100 X1. (S) (!!!X is diameter!!!)
+G00 Z.100 X1. (S) (program 0, !!!X is diameter!!!)
 G71 P10 (line number)
 Q1 D.035 (depth of cut)
 U.010 (finishing: roughing pass, extra on X)
@@ -36,7 +36,8 @@ G01 Z-1.595 X.708 (P12)
 G01 Z-1.673 X.788 (P13)
 G01 Z-1.772 (P14)
 N20 G00 Z-1.772 X.988 (Q, X = .788 + 2*.100 buffer)
-
+G00 G53 X.0 (go home: milling machine, pull X first)
+G53 Z.0 (pull Z first next, use machine 0 as reference)
 T0202 (finish turn)
 G54 
 M03 (turn spindle)
@@ -44,6 +45,10 @@ S1200 (RPM = [4 CS cutting speed]/[diameter] = [4 x 300]/[1 in] = 1200)
 G96
 G50 S4000 (upper limit)
 G00 Z.100 X1. (S) (!!!X is diameter!!!)
+G70 P10 Q2
+G00 X1.
+G00 G53 X.0 (go home: milling machine, pull X first)
+G53 Z.0 (pull Z first next, use machine 0 as reference)
 
 G00 Z.5
 G28 G91 Z0 (cancels G54 and go to machine Z0) 
