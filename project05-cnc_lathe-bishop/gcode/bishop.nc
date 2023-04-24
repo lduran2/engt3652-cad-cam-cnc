@@ -2,15 +2,24 @@
 O52224 (Duran-bishop)
 T0303 (call & set up tool #3)
 G54 
-M03 S1200 G96 (turn spindle, RPM = [4 CS cutting speed]/[diameter] = [4 x 300]/[1 in] = 1200)
+M03 (turn spindle)
+S1200 (RPM = [4 CS cutting speed]/[diameter] = [4 x 300]/[1 in] = 1200)
+G96
 G50 S4000 (upper limit)
 
+G00 Z.100 X1. (S)
+G71 P10 (line number)
+Q1 D.035 (depth of cut) U0 W0 (finishing) F.010 (feed, in/rev)
 
 
 G90 G20 G80 G49
 M06 T1 (call tool #1)
 M08 (turn coolent on)
 G43 H1 (tool length info)
+
+N10 G00 Z.100 X.0 (rapid move to P)
+
+
 G00 X-.1250 Y.1250 (rapid move to P1)
 G00 Z.500 (buffer zone above Z0)
 G00 Z.100
