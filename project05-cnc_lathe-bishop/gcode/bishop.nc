@@ -11,7 +11,7 @@ G71 P10 (line number)
 Q1 D.035 (depth of cut)
 U.010 (finishing: roughing pass, extra on X)
 W.005 (finishing: for next tool to cut on Z)
-F.010 (feed, in/rev)
+F.010 (feed [in/rev])
 
 
 G90 G20 G80 G49
@@ -49,6 +49,18 @@ G70 P10 Q2
 G00 X1.
 G00 G53 X.0 (go home: milling machine, pull X first)
 G53 Z.0 (pull Z first next, use machine 0 as reference)
+
+T0707 (parting tool)
+G54
+M03 (turn spindle)
+S1200 (RPM = [4 CS cutting speed]/[diameter] = [4 x 300]/[1 in] = 1200)
+G96
+G50 S4000 (upper limit)
+G00 Z-1.772 X1.3 (S) (!!!X is diameter!!!)
+G01 X.200 F.002 (parts catcher: go slow - small feed)
+M36 (call parts catcher ON)
+G04 P1.5 (devolved delay [s])
+M37 (parts catcher OFF)
 
 G00 Z.5
 G28 G91 Z0 (cancels G54 and go to machine Z0) 
