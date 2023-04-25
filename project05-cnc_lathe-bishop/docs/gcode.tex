@@ -1,0 +1,24 @@
+\documentclass[twocolumn]{report}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+% no page numbers for sub document
+\pagenumbering{gobble}
+
+\addtocounter{chapter}2
+\title{ENGT 3652 Project 4 Chapter~\thechapter:\\*Bottle opener-Milling:\\*The Gcode}
+\author{Leomar Dur\'an}
+\date{$3^{\text{rd}}$ April 2023}
+
+\usepackage{minted}
+\newcommand*\gcode{lib/pygments/gcodelexer.py:GcodeLexer -x}
+
+\begin{document}
+
+\maketitle
+
+\addtocounter{chapter}{-1}
+\chapter{Gcode}
+\inputminted[breaklines]\gcode{src/Bottle_opener_top.NC}
+
+\end{document}
