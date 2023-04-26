@@ -6,7 +6,7 @@ O49472
 G20
 (TOOL - 3 OFFSET - 3)
 (OD 55 DEG RIGHT  INSERT - DNMG-432)
-G0 T0303
+G0 T0303 (roughing)
 G18
 G97 S3600 M03
 G0 G54 X.988 Z.1 M8 (S, S.X >= Q.X)
@@ -41,7 +41,7 @@ G0 Z.1
 G18
 G70 P100 Q110
 G0 Z.1
-G28 U0. V0. W0. M05
+G28 U0. W0. M05 (V0. is in y, which the lathe does not have)
 T0300
 M01
 (TOOL - 7 OFFSET - 7)
@@ -56,7 +56,7 @@ G1 X.988 F.0025
 X-.0818
 X.1182
 G0 X.988
-G28 U0. V0. W0. M05
+G28 U0. W0. M05
 T0700
 M30
 %
