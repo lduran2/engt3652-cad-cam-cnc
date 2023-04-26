@@ -1,5 +1,5 @@
 %
-O52224 (Duran-bishopManual)
+O94688 (Duran-bishopManualForCncSim)
 T0303 (call & set up tool #3: X-Z- ,off tool)
 G54 
 M03 (turn spindle)
