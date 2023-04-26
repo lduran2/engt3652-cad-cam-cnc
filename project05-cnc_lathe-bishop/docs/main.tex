@@ -19,25 +19,41 @@
     % the manual gcode in two columns
     pdflatex gcode-manual
 }
+\write18{
+    % the manual gcode for CNC Simulator in two columns
+    pdflatex gcode-manual-for_cnc_simulator
+}
 
 \begin{document}
 
 \maketitle
 
 %\chapter{Gcode}
+\addtocounter{chapter}{1}
 \includepdf[pages=2-,pagecommand={}]{gcode-manual.pdf}
 
 \chapter{Plot of manual Gcode in NCViewer}
 \begin{landscape}
-% this image has a lower aspect ratio than a page, so use height for reference
+% this image has a lower portrait aspect ratio than a page, so use height for reference
 \includegraphics[height=\textheight]{img/prj05-manual-gcode-ncviewer-plot.png}
+\end{landscape}
+
+%\chapter{Gcode for CNC Simulator}
+\addtocounter{chapter}{1}
+\includepdf[pages=2-,pagecommand={}]{gcode-manual-for_cnc_simulator.pdf}
+
+\chapter{Result of manual Gcode for CNC Simulator}
+\begin{landscape}
+\null\vfill
+\includegraphics[width=\linewidth]{img/prj05-cnc_simulator_result.png}
+\vfill
 \end{landscape}
 
 \chapter{Verification of operations in Mastercam}
 \begin{landscape}
-\vfill\null
+\vfill
 \includegraphics[width=\linewidth]{img/prj05-mastercam_simulator-verification.png}
-\vfill\null
+\vfill
 \end{landscape}
 
 \end{document}
