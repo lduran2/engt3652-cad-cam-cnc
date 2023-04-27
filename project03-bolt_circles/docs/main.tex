@@ -1,4 +1,4 @@
-\documentclass{report}
+\documentclass[twocolumn]{report}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -13,31 +13,35 @@
 \usepackage{minted}
 \newcommand*\gcode{lib/pygments/gcodelexer.py:GcodeLexer -x}
 
-\usepackage[final]{pdfpages}
-\write18{
-    % the manual gcode for CNC Simulator in two columns
-    pdflatex gcode-cam
-}
+%\usepackage[final]{pdfpages}
+%\write18{
+%    % the manual gcode for CNC Simulator in two columns
+%    pdflatex gcode-cam
+%}
+% usage: \includepdf[pages=2-,pagecommand={}]{gcode-cam.pdf}
 
 \begin{document}
 
 \maketitle
 
-\chapter{Verification of operations in Mastercam}
-\begin{landscape}
-\vfill
-\includegraphics[width=\linewidth]{img/prj05-mastercam_simulator-verification.png}
-\vfill
-\end{landscape}
+\chapter{Verification of operations in MasterCAM}
+\onecolumn
+    \begin{landscape}
+        \vfill
+        \includegraphics[width=\linewidth]{img/prj05-mastercam_simulator-verification.png}
+        \vfill
+    \end{landscape}
+\twocolumn
 
-%\chapter{Gcode for CNC Simulator}
-\addtocounter{chapter}{1}
-\includepdf[pages=2-,pagecommand={}]{gcode-cam.pdf}
+\chapter{The MasterCAM-generated Gcode}
+\inputminted[breaklines]\gcode{src/bishopFromCam.nc}
 
 \chapter{Plot of MasterCAM-generated Gcode in NCViewer}
-\begin{landscape}
-% this image has a lower portrait aspect ratio than a page, so use height for reference
-\includegraphics[height=\textheight]{img/prj05-cam-gcode-ncviewer-plot-xz.png}
-\end{landscape}
+\onecolumn
+    \begin{landscape}
+        % this image has a lower portrait aspect ratio than a page, so use height for reference
+        \includegraphics[height=\textheight]{img/prj05-cam-gcode-ncviewer-plot-xz.png}
+    \end{landscape}
+\twocolumn
 
 \end{document}
