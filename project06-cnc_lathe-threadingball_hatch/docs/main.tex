@@ -1,0 +1,47 @@
+\documentclass[twocolumn]{report}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{subfiles}
+
+\title{ENGT 3652 Project 6:\\*Lathe - Ball Hatch}
+\author{Leomar Dur\'an}
+\date{${27}^{\text{th}}$ April 2023}
+
+\usepackage{pdflscape}
+\usepackage{graphicx}
+\usepackage{minted}
+\newcommand*\gcode{lib/pygments/gcodelexer.py:GcodeLexer -x}
+
+%\usepackage[final]{pdfpages}
+%\write18{
+%    % the manual gcode for CNC Simulator in two columns
+%    pdflatex gcode-cam
+%}
+% usage: \includepdf[pages=2-,pagecommand={}]{gcode-cam.pdf}
+
+\begin{document}
+
+\maketitle
+
+\chapter{Verification of operations in MasterCAM}
+\onecolumn
+    \begin{landscape}
+        \vfill
+        \includegraphics[width=\linewidth]{img/prj06-mastercam_simulator-verification.png}
+        \vfill
+    \end{landscape}
+\twocolumn
+
+\chapter{The MasterCAM-generated Gcode}
+\inputminted[breaklines]\gcode{src/Threading_ballhatch.NC}
+
+\chapter{Plot of MasterCAM-generated Gcode in NCViewer}
+\onecolumn
+    \begin{landscape}
+        % this image has a lower portrait aspect ratio than a page, so use height for reference
+        \includegraphics[height=\textheight]{img/prj06-cam-gcode-ncviewer-plot-xz.png}
+    \end{landscape}
+\twocolumn
+
+\end{document}
