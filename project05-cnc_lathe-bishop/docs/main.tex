@@ -1,4 +1,4 @@
-\documentclass{report}
+\documentclass[twocolumn]{report}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -14,68 +14,83 @@
 \newcommand*\gcode{lib/pygments/gcodelexer.py:GcodeLexer -x}
 
 \usepackage[final]{pdfpages}
-% compile the subfiles
-\write18{
-    % the manual gcode in two columns
-    pdflatex gcode-manual
-}
-\write18{
-    % the manual gcode for CNC Simulator in two columns
-    pdflatex gcode-manual-for_cnc_simulator
-}
+%\write18{
+%    % the manual gcode for CNC Simulator in two columns
+%    pdflatex gcode-cam
+%}
+% usage: \includepdf[pages=2-,pagecommand={}]{gcode-cam.pdf}
 
-\write18{
-    % the manual gcode for CNC Simulator in two columns
-    pdflatex gcode-cam
-}
+%\usepackage[final]{pdfpages}
+%% compile the subfiles
+%\write18{
+%    % the manual gcode in two columns
+%    pdflatex gcode-manual
+%}
+%\write18{
+%    % the manual gcode for CNC Simulator in two columns
+%    pdflatex gcode-manual-for_cnc_simulator
+%}
+%\write18{
+%    % the manual MasterCAM-generated gcode in two columns
+%    pdflatex gcode-cam
+%}
 
 \begin{document}
 
 \maketitle
 
-\chapter{Original drawing}
-\includegraphics[width=\textwidth]{Bishop - The path_pptx/ppt/media/image1.png}
+\onecolumn
+    \chapter{Original drawing}
+    \includegraphics[width=\textwidth]{Bishop - The path_pptx/ppt/media/image1.png}
+\twocolumn
 
-%\chapter{Path}
-\addtocounter{chapter}{1}
-\includepdf[landscape,pages=-,pagecommand={}]{Bishop - The path_pptx.pdf}
+%\chapter{Path}/
+\onecolumn
+    \addtocounter{chapter}{1}
+    \includepdf[landscape,pages=-,pagecommand={}]{Bishop - The path_pptx.pdf}
+\twocolumn
 
-%\chapter{Gcode}
-\addtocounter{chapter}{1}
-\includepdf[pages=2-,pagecommand={}]{gcode-manual.pdf}
+\chapter{Manual Gcode}
+\inputminted[breaklines]\gcode{src/bishopManual.nc}
 
 \chapter{Plot of manual Gcode in NCViewer}
-\begin{landscape}
-% this image has a lower portrait aspect ratio than a page, so use height for reference
-\includegraphics[height=\textheight]{img/prj05-manual-gcode-ncviewer-plot-xz.png}
-\end{landscape}
+\onecolumn
+    \begin{landscape}
+    % this image has a lower portrait aspect ratio than a page, so use height for reference
+    \includegraphics[height=\textheight]{img/prj05-manual-gcode-ncviewer-plot-xz.png}
+    \end{landscape}
+\twocolumn
 
-%\chapter{Gcode for CNC Simulator}
-\addtocounter{chapter}{1}
-\includepdf[pages=2-,pagecommand={}]{gcode-manual-for_cnc_simulator.pdf}
+\chapter{Manual Gcode, edited for CNC Simulator}
+\inputminted[breaklines]\gcode{src/bishopManualForCncSim.nc}
 
 \chapter{Result of manual Gcode for CNC Simulator}
-\begin{landscape}
-\null\vfill
-\includegraphics[width=\linewidth]{img/prj05-cnc_simulator_result.png}
-\vfill
-\end{landscape}
+\onecolumn
+    \begin{landscape}
+        \null\vfill
+        \includegraphics[width=\linewidth]{img/prj05-cnc_simulator_result.png}
+        \vfill
+    \end{landscape}
+\twocolumn
 
 \chapter{Verification of operations in Mastercam}
-\begin{landscape}
-\vfill
-\includegraphics[width=\linewidth]{img/prj05-mastercam_simulator-verification.png}
-\vfill
-\end{landscape}
+\onecolumn
+    \begin{landscape}
+        \vfill
+        \includegraphics[width=\linewidth]{img/prj05-mastercam_simulator-verification.png}
+        \vfill
+    \end{landscape}
+\twocolumn
 
-%\chapter{Gcode for CNC Simulator}
-\addtocounter{chapter}{1}
-\includepdf[pages=2-,pagecommand={}]{gcode-cam.pdf}
+\chapter{The MasterCAM generated Gcode}
+\inputminted[breaklines]\gcode{src/bishopFromCam.nc}
 
 \chapter{Plot of MasterCAM-generated Gcode in NCViewer}
-\begin{landscape}
-% this image has a lower portrait aspect ratio than a page, so use height for reference
-\includegraphics[height=\textheight]{img/prj05-cam-gcode-ncviewer-plot-xz.png}
-\end{landscape}
+\onecolumn
+    \begin{landscape}
+    % this image has a lower portrait aspect ratio than a page, so use height for reference
+    \includegraphics[height=\textheight]{img/prj05-cam-gcode-ncviewer-plot-xz.png}
+    \end{landscape}
+\twocolumn
 
 \end{document}
